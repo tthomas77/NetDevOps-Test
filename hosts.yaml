@@ -1,0 +1,14 @@
+---
+all:
+  hosts:
+    devops-rtr-1:
+    devops-rtr-2:
+
+  vars:
+    ansible_network_os: "ios" # includes ios-xe
+    ansible_user: "cisco"
+    ansible_password: "cisco"
+    ansible_python_interpreter: "/usr/bin/python3" # "/usr/bin/env python"
+    ntp_server1: "192.0.2.1"
+    ntp_server2: "192.0.2.2"
+
