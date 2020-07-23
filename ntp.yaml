@@ -1,6 +1,6 @@
 ---
 - name: "PLAY1: Manage NTP Configuration"
-  hosts: "all"
+  hosts: "devops-rtr-1"
   tasks:
     - name: "TASK0: Validate NTP Servers"
       assert:
@@ -9,7 +9,7 @@
           - "ntp_server2 is defined"
           - "ntp_server1 | ipv4 == ntp_server1"
           - "ntp_server2 | ipv4 == ntp_server2"
-
+        msg: "Malformed NTP Variables, in vars"
     - name: "TASK1: Apply NTP updates"
       ios_config:
         lines:
